@@ -4,19 +4,20 @@ body {
   padding: 0;
   height: 100%;
   background-color: black;
+  color: white;
 }
 
 body {
   font-family: "Times New Roman", Times, serif;
-  color: whitesmoke;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .container {
-  width: min(100% - 32px, 1200px);
-  margin-inline: auto;
+  max-width: 1080px;
+  width: 100%;
+  margin: auto;
 }
 
 #header {
@@ -26,6 +27,7 @@ body {
   left: 0;
   width: 100%;
   background: transparent;
+  color: white;
   transition:
     background-color 0.2s ease,
     backdrop-filter 0.2s ease;
@@ -36,7 +38,7 @@ body {
 }
 
 #header.scrolling {
-  color: greysmoke;
+  color: whitesmoke;
   background: rgba(255, 255, 255, 0.65);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -63,7 +65,7 @@ main {
 }
 
 footer {
-  background-color: white;
+  background-color: teal;
   color: black;
 }
 .footer-content {
@@ -91,10 +93,82 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  position: relative;
   height: 90vh;
 }
 
+.landingphoto::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.landingphoto > * {
+  position: relative;
+  z-index: 1;
+}
+
+.landing-content {
+  padding-top: 200px;
+}
+
 .landing-content h2 {
-  margin-top: 0;
-  padding-top: 100px;
+  font-size: 48px;
+  margin: 0;
+  padding: 0;
+}
+.landing-card {
+  width: 400px;
+  height: 200px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.explore-section {
+  margin: 0;
+  padding-top: -300px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  width: 600px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+/* left white button */
+.btn-white {
+  background-color: white;
+  color: #111;
+  border: 2px solid white;
+  width: 150px;
+}
+
+/* right transparent button */
+.btn-outline {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  width: 150px;
+}
+
+.btn-white:hover {
+  transform: scale(0.94);
+}
+
+.btn-outline:hover {
+  transform: scale(0.94);
 }
