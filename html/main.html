@@ -5,6 +5,7 @@
     <title>Spot Finder</title>
     <link rel="stylesheet" href="/style/main.css" />
     <script src="/js/main.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
   </head>
   <body>
     <header id="header">
@@ -17,7 +18,14 @@
             <li><a href="#">Contact</a></li>
           </ul>
         </nav>
-        <div>Search</div>
+        <div class="header-right">
+          <div id="google-btn"></div>
+          <div id="user-info" class="user-info" style="display:none">
+            <img id="user-avatar" class="user-avatar" src="" alt="avatar" />
+            <span id="user-name"></span>
+            <button class="sign-out-btn" onclick="signOut()">Sign out</button>
+          </div>
+        </div>
       </div>
     </header>
     <main>
@@ -41,6 +49,9 @@
       </section>
       <div class="container main-content">
         <section>
+          <section>
+            <div class="landing-card">landing-card</div>
+          </section>
           <h2>Find your spot</h2>
           <p>
             Spot Finder is a web application that helps you find the best spots
