@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Spot Finder</title>
+    <link rel="stylesheet" href="/style/main.css" />
+    <link rel="stylesheet" href="/style/google.css" />
+    <link rel="stylesheet" href="/style/kakao.css" />
+    <link rel="stylesheet" href="/style/unsplash.css" />
+    <link rel="stylesheet" href="/style/about.css" />
+    <script src="/js/main.js" defer></script>
+    <script src="/js/google.js" defer></script>
+    <script src="/js/kakao.js" defer></script>
+    <script src="/js/naver.js" defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="container header-content">
+        <a href="/html/main.html"><h1 class="title">Spot Finder</h1></a>
+        <nav>
+          <ul>
+            <li><a href="/html/main.html">Home</a></li>
+            <li><a href="/html/spots.html">Explore</a></li>
+            <li><a href="/html/about.html">About</a></li>
+          </ul>
+        </nav>
+        <div class="search-wrapper">
+          <img
+            class="search-icon"
+            src="/media/search-interface-symbol.png"
+            alt="search"
+            width="16"
+            height="16"
+          />
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search spots..."
+            autocomplete="off"
+          />
+          <div id="search-results" class="search-results"></div>
+        </div>
+        <div class="header-right">
+          <div id="google-btn"></div>
+          <div id="user-info" class="user-info" style="display: none">
+            <img id="user-avatar" class="user-avatar" src="" alt="avatar" />
+            <span id="user-name"></span>
+            <button class="sign-out-btn" onclick="signOut()">Sign out</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main id="about">
+      <h1>Spot Finder</h1>
+      <p>This project's name is Spot-Finder.</p>
+      <p>
+        We made this project for the course "Introduction to Internet and Web",
+        with the purpose of finding dating spots or tourist attraction places
+        that could make it easier to search and find and then plan the routes
+        for whoever in Busan area.
+      </p>
+      <p>
+        Due to not enough time to work on this project, this project may feel
+        incomplete. But for now it does what it should do, the basic actions are
+        already included. But if possible we will be developing this project
+        further to make it a real life helper.
+      </p>
+      <p>The developers:</p>
+      <ul>
+        <li>Jamiyanpurev Ochir (201724637)</li>
+        <li>John Doe ()</li>
+        <li>John Doe ()</li>
+      </ul>
+    </main>
+    <footer>
+      <div class="container footer-content">
+        <p>
+          Team members: Jamiyanpurev Ochir(201724637), Jane Smith, Bob Johnson
+        </p>
+        <p>&copy; 2026 Spot Finder. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
