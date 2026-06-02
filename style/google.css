@@ -1,0 +1,51 @@
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+}
+
+.scrolled #user-name {
+  color: black;
+}
+
+.sign-out-btn {
+  background: transparent;
+  border: 1.5px solid white;
+  color: white;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.sign-out-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.scrolled .sign-out-btn {
+  border-color: #333;
+  color: #333;
+}
+
+.scrolled .sign-out-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+}

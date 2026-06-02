@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Explore Spots - Spot Finder</title>
+    <link rel="stylesheet" href="/style/main.css" />
+    <link rel="stylesheet" href="/style/google.css" />
+    <link rel="stylesheet" href="/style/kakao.css" />
+    <link rel="stylesheet" href="/style/unsplash.css" />
+    <link rel="stylesheet" href="/style/spots.css" />
+    <script src="/js/main.js" defer></script>
+    <script src="/js/google.js" defer></script>
+    <script src="/js/kakao.js" defer></script>
+    <script src="/js/naver.js" defer></script>
+    <script src="/js/card.js" defer></script>
+    <script src="/js/spots.js" defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="container header-content">
+        <h1 class="title">Spot Finder</h1>
+        <nav>
+          <ul>
+            <li><a href="/html/main.html">Home</a></li>
+            <li><a href="/html/spots.html">Spots</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </nav>
+        <div class="search-wrapper">
+          <img
+            class="search-icon"
+            src="/media/search-interface-symbol.png"
+            alt="search"
+            width="16"
+            height="16"
+          />
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search spots..."
+            autocomplete="off"
+          />
+          <div id="search-results" class="search-results"></div>
+        </div>
+        <div class="header-right">
+          <div id="google-btn"></div>
+          <div id="user-info" class="user-info" style="display: none">
+            <img id="user-avatar" class="user-avatar" src="" alt="avatar" />
+            <span id="user-name"></span>
+            <button class="sign-out-btn" onclick="signOut()">Sign out</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="spots-hero">
+        <h2>Explore Busan Spots</h2>
+        <p>Find the best cafes, restaurants, and attractions in Busan</p>
+      </section>
+
+      <div class="container">
+        <div class="category-tabs">
+          <button class="category-tab active" data-tab="all">All</button>
+          <button class="category-tab" data-tab="cafe">Cafes ☕</button>
+          <button class="category-tab" data-tab="restaurant">Restaurants 🍽️</button>
+          <button class="category-tab" data-tab="tourist">Tourist Spots 🏛️</button>
+          <button class="category-tab" data-tab="culture">Culture 🎭</button>
+        </div>
+
+        <div id="spots-grid" class="spots-grid"></div>
+
+        <div id="pagination" class="pagination"></div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <p>Team members: Jamiyanpurev Ochir(201724637), Jane Smith, Bob Johnson</p>
+        <p>&copy; 2026 Spot Finder. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -4,23 +4,46 @@
     <meta charset="UTF-8" />
     <title>Spot Finder</title>
     <link rel="stylesheet" href="/style/main.css" />
-    <script src="/js/main.js"></script>
+    <link rel="stylesheet" href="/style/google.css" />
+    <link rel="stylesheet" href="/style/kakao.css" />
+    <link rel="stylesheet" href="/style/unsplash.css" />
+    <script src="/js/main.js" defer></script>
+    <script src="/js/google.js" defer></script>
+    <script src="/js/kakao.js" defer></script>
+    <script src="/js/naver.js" defer></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
   </head>
   <body>
     <header id="header">
       <div class="container header-content">
-        <h1 class="title">Spot Finder</h1>
+        <a href="/html/main.html"><h1 class="title">Spot Finder</h1></a>
         <nav>
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="main.html">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
           </ul>
         </nav>
+        <div class="search-wrapper">
+          <img
+            class="search-icon"
+            src="/media/search-interface-symbol.png"
+            alt="search"
+            width="16"
+            height="16"
+          />
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search spots..."
+            autocomplete="off"
+          />
+          <div id="search-results" class="search-results"></div>
+        </div>
         <div class="header-right">
           <div id="google-btn"></div>
-          <div id="user-info" class="user-info" style="display:none">
+          <div id="user-info" class="user-info" style="display: none">
             <img id="user-avatar" class="user-avatar" src="" alt="avatar" />
             <span id="user-name"></span>
             <button class="sign-out-btn" onclick="signOut()">Sign out</button>
@@ -39,8 +62,12 @@
               <div class="explore-section">
                 <h3>Choose your category:</h3>
                 <div class="hero-buttons">
-                  <button class="btn btn-white">Dating spots</button>
-                  <button class="btn btn-outline">Tourist spots</button>
+                  <a href="/html/spots.html?tab=cafe" class="btn btn-white"
+                    >Dating spots</a
+                  >
+                  <a href="/html/spots.html?tab=tourist" class="btn btn-outline"
+                    >Tourist spots</a
+                  >
                 </div>
               </div>
             </div>
@@ -108,7 +135,7 @@
         <p>
           Team members: Jamiyanpurev Ochir(201724637), Jane Smith, Bob Johnson
         </p>
-        <p>&copy; 2024 Spot Finder. All rights reserved.</p>
+        <p>&copy; 2026 Spot Finder. All rights reserved.</p>
       </div>
     </footer>
   </body>

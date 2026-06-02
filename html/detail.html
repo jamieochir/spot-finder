@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Detail - Spot Finder</title>
+    <link rel="stylesheet" href="/style/main.css" />
+    <link rel="stylesheet" href="/style/google.css" />
+    <link rel="stylesheet" href="/style/kakao.css" />
+    <link rel="stylesheet" href="/style/detail.css" />
+    <script src="/js/main.js" defer></script>
+    <script src="/js/google.js" defer></script>
+    <script src="/js/kakao.js" defer></script>
+    <script src="/js/naver.js" defer></script>
+    <script src="/js/detail.js" defer></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <header id="header">
+      <div class="container header-content">
+        <h1 class="title">Spot Finder</h1>
+        <nav>
+          <ul>
+            <li><a href="/html/main.html">Home</a></li>
+            <li><a href="/html/spots.html">Spots</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </nav>
+        <div class="search-wrapper">
+          <img class="search-icon" src="/media/search-interface-symbol.png" alt="search" width="16" height="16" />
+          <input type="text" id="search-input" class="search-input" placeholder="Search spots..." autocomplete="off" />
+          <div id="search-results" class="search-results"></div>
+        </div>
+        <div class="header-right">
+          <div id="google-btn"></div>
+          <div id="user-info" class="user-info" style="display:none">
+            <img id="user-avatar" class="user-avatar" src="" alt="avatar" />
+            <span id="user-name"></span>
+            <button class="sign-out-btn" onclick="signOut()">Sign out</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="detail-hero" class="detail-hero">
+        <div class="container detail-hero-content">
+          <a href="javascript:history.back()" class="detail-back">← Back</a>
+          <div class="detail-badge" id="detail-badge">Category</div>
+          <h1 id="detail-name">Place Name</h1>
+        </div>
+      </section>
+
+      <div class="container detail-body">
+
+        <div class="detail-main">
+          <div class="detail-section">
+            <h2 class="detail-section-title">Location Info</h2>
+            <div class="detail-info-row">
+              <span class="detail-info-icon">📍</span>
+              <div>
+                <div class="detail-info-label">Address</div>
+                <div class="detail-info-value" id="detail-address">—</div>
+              </div>
+            </div>
+            <div class="detail-info-row">
+              <span class="detail-info-icon">🏷️</span>
+              <div>
+                <div class="detail-info-label">Category</div>
+                <div class="detail-info-value" id="detail-category-val">—</div>
+              </div>
+            </div>
+            <div class="detail-info-row">
+              <span class="detail-info-icon">🌏</span>
+              <div>
+                <div class="detail-info-label">Region</div>
+                <div class="detail-info-value">Busan, South Korea</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="detail-section" id="detail-gallery-section" style="display:none">
+            <h2 class="detail-section-title">Photos</h2>
+            <div id="detail-gallery" class="detail-gallery"></div>
+          </div>
+
+          <div class="detail-section">
+            <h2 class="detail-section-title">Map</h2>
+            <div class="detail-map-wrapper">
+              <iframe id="detail-map" title="Map" loading="lazy"></iframe>
+            </div>
+          </div>
+
+          <div class="detail-section">
+            <h2 class="detail-section-title">Tags</h2>
+            <div class="detail-tag-list" id="detail-tags"></div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="detail-sidebar-card">
+            <h3>Visit this spot</h3>
+            <a id="detail-directions" href="#" target="_blank" class="detail-action-btn primary">
+              🗺️ Get Directions
+            </a>
+            <a id="detail-kakao-link" href="#" target="_blank" class="detail-action-btn secondary">
+              🔗 Open in Kakao Maps
+            </a>
+            <div class="detail-divider"></div>
+            <div class="detail-info-row" style="border:none; padding:0">
+              <span class="detail-info-icon">📍</span>
+              <div>
+                <div class="detail-info-label" style="color:#999">Address</div>
+                <div class="detail-info-value" id="detail-address-sidebar" style="color:#111">—</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <p>Team members: Jamiyanpurev Ochir(201724637), Jane Smith, Bob Johnson</p>
+        <p>&copy; 2026 Spot Finder. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
