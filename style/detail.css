@@ -252,3 +252,25 @@ main {
   border-radius: 999px;
   font-weight: 500;
 }
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  .detail-hero { height: 340px; }
+  .detail-hero-content h1 { font-size: 26px; }
+  .detail-body { padding: 24px 0 40px; gap: 20px; }
+  .detail-section-title { font-size: 16px; }
+  .detail-map-wrapper { height: 240px; }
+  .detail-sidebar-card { position: static; }
+  .detail-gallery { grid-template-columns: repeat(2, 1fr); }
+  .detail-gallery .gallery-img:first-child { height: 200px; }
+  .gallery-img { height: 130px; }
+}
+
+@media (max-width: 480px) {
+  .detail-hero { height: 260px; }
+  .detail-hero-content h1 { font-size: 20px; }
+  .detail-gallery { grid-template-columns: 1fr 1fr; gap: 6px; }
+  .gallery-img { height: 110px; }
+  .detail-gallery .gallery-img:first-child { height: 160px; }
+}

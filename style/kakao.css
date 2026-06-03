@@ -154,3 +154,13 @@
   color: #999;
   font-size: 14px;
 }
+
+/* ── Responsive ── */
+
+@media (max-width: 1024px) {
+  .search-input { width: 120px; }
+}
+
+@media (max-width: 768px) {
+  .search-results { min-width: 260px; }
+}

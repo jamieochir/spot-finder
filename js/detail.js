@@ -42,15 +42,13 @@ async function loadPhotos() {
   const photos = await fetchPlacePhotos(place.name, place.categoryCode, 6);
   if (!photos || photos.length === 0) return;
 
-  // Set hero background
   document.getElementById("detail-hero").style.backgroundImage =
     `linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.6) 100%), url(${photos[0]})`;
 
-  // Build photo gallery from all returned photos
   const gallery = document.getElementById("detail-gallery");
   gallery.innerHTML = "";
   photos.forEach((url) => {
-    const img = document.createElement("img");
+    const img     = document.createElement("img");
     img.src       = url;
     img.alt       = place.name;
     img.className = "gallery-img";
@@ -58,7 +56,6 @@ async function loadPhotos() {
     gallery.appendChild(img);
   });
 
-  // Show gallery section only if there are photos
   document.getElementById("detail-gallery-section").style.display = "block";
 }
 

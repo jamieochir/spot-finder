@@ -134,7 +134,6 @@ a {
 
 .explore-section {
   margin: 0;
-  padding-top: -300px;
 }
 
 .hero-buttons {
@@ -182,4 +181,108 @@ a {
 
 .btn-outline:hover {
   transform: scale(0.94);
+}
+
+.featured-section {
+  padding: 48px 0 64px;
+}
+
+.featured-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.featured-title {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+
+.featured-see-all {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.featured-see-all:hover {
+  color: white;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .featured-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .featured-grid { grid-template-columns: 1fr; }
+}
+
+.featured-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.see-all-btn {
+  width: auto;
+  padding: 12px 60px;
+  font-size: 16px;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 1024px) {
+  .container { padding: 0 24px; }
+  nav ul { gap: 24px; }
+  .landing-content { padding-top: 160px; }
+  .landing-content h2 { font-size: 36px; }
+  .landing-card { width: 100%; }
+  .hero-buttons { width: auto; }
+  .featured-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 16px; }
+
+  #header { height: auto; padding: 10px 0; }
+
+  .header-content { flex-wrap: wrap; gap: 10px; }
+
+  .title { font-size: 20px; }
+
+  nav { order: 3; width: 100%; }
+  nav ul { gap: 20px; justify-content: center; }
+
+  .search-wrapper { display: none; }
+
+  .header-right { margin-left: auto; }
+
+  .landingphoto { height: 70vh; }
+
+  .landing-content { padding-top: 100px; }
+  .landing-content h2 { font-size: 24px; }
+  .landing-card { width: 100%; height: auto; gap: 16px; }
+
+  .hero-buttons { width: 100%; flex-direction: column; gap: 12px; }
+  .btn-white, .btn-outline { width: 100%; max-width: 260px; }
+
+  .featured-section { padding: 32px 0 48px; }
+  .featured-title { font-size: 20px; }
+  .featured-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .title { font-size: 18px; }
+  nav ul { gap: 12px; font-size: 14px; }
+  .landing-content h2 { font-size: 20px; }
 }

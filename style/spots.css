@@ -218,3 +218,25 @@
   opacity: 0.3;
   cursor: not-allowed;
 }
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  .spots-hero { padding: 100px 0 28px; }
+  .spots-hero h2 { font-size: 26px; }
+  .spots-hero p { font-size: 14px; }
+
+  .category-tabs { gap: 6px; padding: 20px 0 14px; }
+  .category-tab { padding: 6px 14px; font-size: 13px; }
+
+  .spots-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+  .page-btn { width: 34px; height: 34px; font-size: 13px; }
+  .pagination { gap: 4px; padding-bottom: 32px; }
+}
+
+@media (max-width: 480px) {
+  .spots-hero h2 { font-size: 20px; }
+  .spots-grid { grid-template-columns: 1fr; }
+  .category-tab { padding: 5px 10px; font-size: 12px; }
+}

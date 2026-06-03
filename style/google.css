@@ -49,3 +49,11 @@
 .scrolled .sign-out-btn:hover {
   background: rgba(0, 0, 0, 0.08);
 }
+
+/* ── Responsive ── */
+
+@media (max-width: 768px) {
+  #user-name { display: none; }
+  .user-avatar { width: 28px; height: 28px; }
+  .sign-out-btn { font-size: 12px; padding: 3px 10px; }
+}

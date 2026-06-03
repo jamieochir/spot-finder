@@ -81,7 +81,7 @@ async function searchKakao(query) {
 
     filtered.slice(0, 8).forEach(async (place) => {
       const icon = CATEGORY_ICON[place.category_group_code] || DEFAULT_ICON;
-      const tag = icon.label || place.category_group_name || place.category_name.split(" > ")[0];
+      const tag = icon.label || place.category_group_name || (place.category_name ? place.category_name.split(" > ")[0] : "Spot");
       const item = document.createElement("div");
       item.className = "search-item";
       item.innerHTML = `
@@ -112,8 +112,8 @@ async function searchKakao(query) {
       if (photoUrl) {
         const iconEl = item.querySelector(".search-item-icon");
         iconEl.style.background = "none";
-        iconEl.style.padding = "0";
-        iconEl.style.overflow = "hidden";
+        iconEl.style.padding    = "0";
+        iconEl.style.overflow   = "hidden";
         iconEl.innerHTML = `<img src="${photoUrl}" alt="${place.place_name}" class="search-item-photo" />`;
       }
     });
