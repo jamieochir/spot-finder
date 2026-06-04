@@ -23,7 +23,7 @@ function fetchPlacePhoto(placeName) {
   );
 }
 
-function fetchPlacePhotos(placeName, count) {
+function fetchPlacePhotos(placeName, categoryCode, count) {
   if (!count) count = 6;
 
   var request = $.ajax({
