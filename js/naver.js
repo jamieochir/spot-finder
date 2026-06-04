@@ -1,23 +1,53 @@
-const PROXY = "http://localhost:3000/api/photos";
+var PROXY = "http://localhost:3000/api/photos";
 
-async function fetchPlacePhoto(placeName) {
-  try {
-    const res  = await fetch(`${PROXY}?q=${encodeURIComponent(placeName + " 부산")}&count=1`);
-    const data = await res.json();
-    if (data.items && data.items.length > 0) return data.items[0].link;
-  } catch (err) {
-    console.error("fetchPlacePhoto failed:", err);
-  }
-  return null;
+function fetchPlacePhoto(placeName) {
+  var request = $.ajax({
+    method: "GET",
+    url: PROXY,
+    data: {
+      q: placeName + " 부산",
+      count: 1
+    }
+  });
+
+  return request.then(
+    function (data) {
+      if (data.items && data.items.length > 0) {
+        return data.items[0].link;
+      }
+      return null;
+    },
+    function () {
+      return null;
+    }
+  );
 }
 
-async function fetchPlacePhotos(placeName, categoryCode, count = 6) {
-  try {
-    const res  = await fetch(`${PROXY}?q=${encodeURIComponent(placeName + " 부산")}&count=${count}`);
-    const data = await res.json();
-    if (data.items && data.items.length > 0) return data.items.map((i) => i.link);
-  } catch (err) {
-    console.error("fetchPlacePhotos failed:", err);
-  }
-  return [];
+function fetchPlacePhotos(placeName, count) {
+  if (!count) count = 6;
+
+  var request = $.ajax({
+    method: "GET",
+    url: PROXY,
+    data: {
+      q: placeName + " 부산",
+      count: count
+    }
+  });
+
+  return request.then(
+    function (data) {
+      if (data.items && data.items.length > 0) {
+        var links = [];
+        for (var i = 0; i < data.items.length; i++) {
+          links.push(data.items[i].link);
+        }
+        return links;
+      }
+      return [];
+    },
+    function () {
+      return [];
+    }
+  );
 }

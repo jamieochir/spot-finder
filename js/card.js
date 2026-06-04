@@ -1,31 +1,43 @@
 function createSpotCard(place, photoUrl) {
-  const icon = CATEGORY_ICON[place.category_group_code] || DEFAULT_ICON;
-  const tag =
-    icon.label ||
-    place.category_group_name ||
-    (place.category_name ? place.category_name.split(" > ")[0] : "Spot");
+  let icon = CATEGORY_ICON[place.category_group_code] || DEFAULT_ICON;
 
-  const card = document.createElement("div");
+  let tag;
+  if (icon.label) {
+    tag = icon.label;
+  } else if (place.category_group_name) {
+    tag = place.category_group_name;
+  } else {
+    tag = "Spot";
+  }
+
+  let photoHtml;
+  if (photoUrl) {
+    photoHtml = "<img src='" + photoUrl + "' alt='" + place.place_name + "' class='card-photo' />";
+  } else {
+    photoHtml = "<div class='card-photo-placeholder'>" + icon.emoji + "</div>";
+  }
+
+  let detailUrl = "/html/detail.html?";
+  detailUrl += "name="          + place.place_name;
+  detailUrl += "&address="      + place.address_name;
+  detailUrl += "&category="     + tag;
+  detailUrl += "&categoryCode=" + (place.category_group_code || "");
+  detailUrl += "&x="            + place.x;
+  detailUrl += "&y="            + place.y;
+  detailUrl += "&url="          + (place.place_url || "");
+
+  let card = document.createElement("div");
   card.className = "spot-card";
-
-  card.innerHTML = `
-    <div class="card-photo-wrapper">
-      ${
-        photoUrl
-          ? `<img src="${photoUrl}" alt="${place.place_name}" class="card-photo" />`
-          : `<div class="card-photo-placeholder">${icon.emoji}</div>`
-      }
-      <span class="card-badge">${tag}</span>
-    </div>
-    <div class="card-body">
-      <h3 class="card-title">${place.place_name}</h3>
-      <p class="card-address">📍 ${place.address_name}</p>
-      <a
-        href="/html/detail.html?id=${place.id}&name=${encodeURIComponent(place.place_name)}&address=${encodeURIComponent(place.address_name)}&category=${encodeURIComponent(tag)}&categoryCode=${place.category_group_code || ""}&x=${place.x}&y=${place.y}&url=${encodeURIComponent(place.place_url || "")}"
-        class="card-btn"
-      >View Details →</a>
-    </div>
-  `;
+  card.innerHTML =
+    "<div class='card-photo-wrapper'>" +
+      photoHtml +
+      "<span class='card-badge'>" + tag + "</span>" +
+    "</div>" +
+    "<div class='card-body'>" +
+      "<h3 class='card-title'>" + place.place_name + "</h3>" +
+      "<p class='card-address'>📍 " + place.address_name + "</p>" +
+      "<a href='" + detailUrl + "' class='card-btn'>View Details →</a>" +
+    "</div>";
 
   return card;
 }
