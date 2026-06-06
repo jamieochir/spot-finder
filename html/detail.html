@@ -8,9 +8,13 @@
     <link rel="stylesheet" href="/style/google.css" />
     <link rel="stylesheet" href="/style/kakao.css" />
     <link rel="stylesheet" href="/style/detail.css" />
+    <script
+      src="https://code.jquery.com/jquery-4.0.0.min.js"
+      integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+      crossorigin="anonymous"
+    ></script>
     <script src="/js/main.js" defer></script>
     <script src="/js/google.js" defer></script>
-    <script src="/js/kakao.js" defer></script>
     <script src="/js/naver.js" defer></script>
     <script src="/js/detail.js" defer></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
@@ -27,13 +31,25 @@
           </ul>
         </nav>
         <div class="search-wrapper">
-          <img class="search-icon" src="/media/search-interface-symbol.png" alt="search" width="16" height="16" />
-          <input type="text" id="search-input" class="search-input" placeholder="Search spots..." autocomplete="off" />
+          <img
+            class="search-icon"
+            src="/media/search-interface-symbol.png"
+            alt="search"
+            width="16"
+            height="16"
+          />
+          <input
+            type="text"
+            id="search-input"
+            class="search-input"
+            placeholder="Search spots..."
+            autocomplete="off"
+          />
           <div id="search-results" class="search-results"></div>
         </div>
         <div class="header-right">
           <div id="google-btn"></div>
-          <div id="user-info" class="user-info" style="display:none">
+          <div id="user-info" class="user-info" style="display: none">
             <img id="user-avatar" class="user-avatar" src="" alt="avatar" />
             <span id="user-name"></span>
             <button class="sign-out-btn" onclick="signOut()">Sign out</button>
@@ -50,7 +66,6 @@
       </section>
 
       <div class="container detail-body">
-
         <div class="detail-main">
           <div class="detail-section detail-info-section">
             <div class="detail-info-grid">
@@ -105,29 +120,46 @@
         <aside>
           <div class="detail-sidebar-card">
             <h3>Visit this spot</h3>
-            <a id="detail-directions" href="#" target="_blank" class="detail-action-btn primary">
+            <a
+              id="detail-directions"
+              href="#"
+              target="_blank"
+              class="detail-action-btn primary"
+            >
               🗺️ Get Directions
             </a>
-            <a id="detail-kakao-link" href="#" target="_blank" class="detail-action-btn secondary">
+            <a
+              id="detail-kakao-link"
+              href="#"
+              target="_blank"
+              class="detail-action-btn secondary"
+            >
               🔗 Open in Kakao Maps
             </a>
             <div class="detail-divider"></div>
-            <div class="detail-info-row" style="border:none; padding:0">
+            <div class="detail-info-row" style="border: none; padding: 0">
               <span class="detail-info-icon">📍</span>
               <div>
-                <div class="detail-info-label" style="color:#999">Address</div>
-                <div class="detail-info-value" id="detail-address-sidebar" style="color:#111">—</div>
+                <div class="detail-info-label" style="color: #999">Address</div>
+                <div
+                  class="detail-info-value"
+                  id="detail-address-sidebar"
+                  style="color: #111"
+                >
+                  —
+                </div>
               </div>
             </div>
           </div>
         </aside>
-
       </div>
     </main>
 
     <footer>
       <div class="container footer-content">
-        <p>Team members: Jamiyanpurev Ochir(201724637), Jane Smith, Bob Johnson</p>
+        <p>
+          Team members: Jamiyanpurev Ochir(201724637), Jane Smith, Bob Johnson
+        </p>
         <p>&copy; 2026 Spot Finder. All rights reserved.</p>
       </div>
     </footer>
