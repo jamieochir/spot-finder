@@ -222,12 +222,20 @@
 /* ── Responsive ── */
 
 @media (max-width: 768px) {
-  .spots-hero { padding: 100px 0 28px; }
+  .spots-hero { padding: 110px 0 28px; }
   .spots-hero h2 { font-size: 26px; }
   .spots-hero p { font-size: 14px; }
 
-  .category-tabs { gap: 6px; padding: 20px 0 14px; }
-  .category-tab { padding: 6px 14px; font-size: 13px; }
+  .category-tabs {
+    gap: 6px;
+    padding: 20px 0 14px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .category-tab { padding: 6px 16px; font-size: 13px; white-space: nowrap; }
 
   .spots-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
 
@@ -236,7 +244,8 @@
 }
 
 @media (max-width: 480px) {
+  .spots-hero { padding: 100px 0 20px; }
   .spots-hero h2 { font-size: 20px; }
   .spots-grid { grid-template-columns: 1fr; }
-  .category-tab { padding: 5px 10px; font-size: 12px; }
+  .category-tab { padding: 5px 14px; font-size: 12px; }
 }

@@ -347,14 +347,20 @@ main {
 
 @media (max-width: 768px) {
   .detail-hero {
-    height: 340px;
+    height: 300px;
+  }
+  .detail-hero-content {
+    padding: 24px 0;
+  }
+  #detail-name {
+    font-size: 26px;
   }
   .detail-body {
-    padding: 24px 0 40px;
+    padding: 20px 0 40px;
     gap: 20px;
   }
   .detail-map-wrapper {
-    height: 240px;
+    height: 220px;
   }
   .detail-sidebar-card {
     position: static;
@@ -372,26 +378,32 @@ main {
     white-space: normal;
   }
   .detail-title-area h1 {
-    font-size: 34px;
+    font-size: 28px;
   }
   .detail-gallery {
     grid-template-columns: repeat(2, 1fr);
     gap: 5px;
   }
   .gallery-img {
-    height: 140px;
+    height: 130px;
   }
 }
 
 @media (max-width: 480px) {
   .detail-hero {
-    height: 260px;
+    height: 240px;
+  }
+  #detail-name {
+    font-size: 22px;
   }
   .detail-gallery {
     grid-template-columns: 1fr 1fr;
-    gap: 6px;
+    gap: 5px;
   }
   .gallery-img {
-    height: 110px;
+    height: 100px;
+  }
+  .detail-section-title {
+    font-size: 16px;
   }
 }
