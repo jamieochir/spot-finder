@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detail - Spot Finder</title>
     <link rel="stylesheet" href="/style/main.css" />
     <link rel="stylesheet" href="/style/google.css" />
@@ -61,56 +62,57 @@
       <section id="detail-hero" class="detail-hero">
         <div class="container detail-hero-content">
           <a href="javascript:history.back()" class="detail-back">← Back</a>
-          <div class="detail-badge" id="detail-badge">Category</div>
-          <h1 id="detail-name">Place Name</h1>
         </div>
       </section>
 
       <div class="container detail-body">
         <div class="detail-main">
-          <div class="detail-section">
-            <h2 class="detail-section-title">Location Info</h2>
-            <div class="detail-info-row">
-              <span class="detail-info-icon">📍</span>
-              <div>
-                <div class="detail-info-label">Address</div>
-                <div class="detail-info-value" id="detail-address">—</div>
+          <div class="detail-section detail-info-section">
+            <div class="detail-info-grid">
+              <div class="detail-info-card">
+                <span class="detail-info-icon">📍</span>
+                <div>
+                  <div class="detail-info-label">Address</div>
+                  <div class="detail-info-value" id="detail-address">—</div>
+                </div>
               </div>
-            </div>
-            <div class="detail-info-row">
-              <span class="detail-info-icon">🏷️</span>
-              <div>
-                <div class="detail-info-label">Category</div>
-                <div class="detail-info-value" id="detail-category-val">—</div>
+
+              <div class="detail-info-card">
+                <span class="detail-info-icon">🏷️</span>
+                <div>
+                  <div class="detail-info-label">Category</div>
+                  <div class="detail-info-value" id="detail-category-val">—</div>
+                </div>
               </div>
-            </div>
-            <div class="detail-info-row">
-              <span class="detail-info-icon">🌏</span>
-              <div>
-                <div class="detail-info-label">Region</div>
-                <div class="detail-info-value">Busan, South Korea</div>
+
+              <div class="detail-info-card">
+                <span class="detail-info-icon">🌏</span>
+                <div>
+                  <div class="detail-info-label">Region</div>
+                  <div class="detail-info-value">Busan, South Korea</div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div
-            class="detail-section"
-            id="detail-gallery-section"
-            style="display: none"
-          >
-            <h2 class="detail-section-title">Photos</h2>
+          <div class="detail-title-area">
+            <div class="detail-badge" id="detail-badge">Category</div>
+            <h1 id="detail-name">Place Name</h1>
+          </div>
+
+          <div class="detail-section" id="detail-gallery-section" style="display:none">
+            <div class="detail-content-label">Gallery</div>
             <div id="detail-gallery" class="detail-gallery"></div>
           </div>
 
           <div class="detail-section">
-            <h2 class="detail-section-title">Map</h2>
+            <div class="detail-content-label">Location</div>
             <div class="detail-map-wrapper">
               <iframe id="detail-map" title="Map" loading="lazy"></iframe>
             </div>
           </div>
 
           <div class="detail-section">
-            <h2 class="detail-section-title">Tags</h2>
             <div class="detail-tag-list" id="detail-tags"></div>
           </div>
         </div>
