@@ -1,8 +1,9 @@
 main {
-  background: #f7f4ef;
-  color: #1f1f1f;
-  font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", "Segoe UI", sans-serif;
-
+  background: black;
+  color: white;
+  font-family:
+    "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic",
+    "Segoe UI", sans-serif;
 }
 
 .detail-gallery {
@@ -86,7 +87,6 @@ main {
   margin-bottom: 12px;
 }
 
-
 .detail-title-area {
   margin-top: 10px;
   margin-bottom: 50px;
@@ -111,7 +111,7 @@ main {
   font-weight: 800;
   margin: 0;
   line-height: 1.15;
-  color: #1c1c1c;
+  color: white;
   text-shadow: none;
   letter-spacing: -1px;
 }
@@ -205,9 +205,15 @@ main {
   white-space: nowrap;
 }
 
-.detail-info-card:nth-child(1) { order: 3; }
-.detail-info-card:nth-child(2) { order: 2; }
-.detail-info-card:nth-child(3) { order: 1; }
+.detail-info-card:nth-child(1) {
+  order: 3;
+}
+.detail-info-card:nth-child(2) {
+  order: 2;
+}
+.detail-info-card:nth-child(3) {
+  order: 1;
+}
 
 .detail-info-icon {
   font-size: 18px;
@@ -340,20 +346,52 @@ main {
 /* ── Responsive ── */
 
 @media (max-width: 768px) {
-  .detail-hero { height: 340px; }
-  .detail-body { padding: 24px 0 40px; gap: 20px; }
-  .detail-map-wrapper { height: 240px; }
-  .detail-sidebar-card { position: static; }
-  .detail-info-grid { display: flex; flex-wrap: wrap; gap: 7px; }
-  .detail-info-card { padding: 7px 10px; }
-  .detail-info-card .detail-info-value { font-size: 12px; white-space: normal; }
-  .detail-title-area h1 { font-size: 34px; }
-  .detail-gallery { grid-template-columns: repeat(2, 1fr); gap: 5px; }
-  .gallery-img { height: 140px; }
+  .detail-hero {
+    height: 340px;
+  }
+  .detail-body {
+    padding: 24px 0 40px;
+    gap: 20px;
+  }
+  .detail-map-wrapper {
+    height: 240px;
+  }
+  .detail-sidebar-card {
+    position: static;
+  }
+  .detail-info-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .detail-info-card {
+    padding: 7px 10px;
+  }
+  .detail-info-card .detail-info-value {
+    font-size: 12px;
+    white-space: normal;
+  }
+  .detail-title-area h1 {
+    font-size: 34px;
+  }
+  .detail-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+  .gallery-img {
+    height: 140px;
+  }
 }
 
 @media (max-width: 480px) {
-  .detail-hero { height: 260px; }
-  .detail-gallery { grid-template-columns: 1fr 1fr; gap: 6px; }
-  .gallery-img { height: 110px; }
+  .detail-hero {
+    height: 260px;
+  }
+  .detail-gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .gallery-img {
+    height: 110px;
+  }
 }
