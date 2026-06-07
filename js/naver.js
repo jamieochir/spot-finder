@@ -1,4 +1,4 @@
-var PROXY = "http://localhost:3000/api/photos";
+var PROXY = "https://spot-finder-vp4a.onrender.com/api/photos";
 
 function fetchPlacePhoto(placeName) {
   var request = $.ajax({
